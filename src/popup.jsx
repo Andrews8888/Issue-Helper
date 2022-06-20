@@ -3,10 +3,13 @@ import { render } from "react-dom";
 
 function Popup() {
     return (
-        <div>
-            <h1>Hellom world!</h1>
-            <p>This is a simple popup.</p>
-        </div>
+        <form>
+            <input type="text" placeholder="Title" name="title" id="title-git-form"/>
+            <textarea placeholder="Description" name="description" id="description-git-form" cols="30" rows="10"></textarea>
+            <button type="button" class="submit-git-inp" id="submit-git-form">Submit</button>
+
+            <script src="content.js"></script>
+        </form>
     );
 }
 
