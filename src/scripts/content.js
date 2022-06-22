@@ -8,14 +8,21 @@ async function uploadIssue() {
     let title = document.getElementById("title-git-form").value;
     let description = document.getElementById("description-git-form").value;
 
-    let sendIssue = await chrome.runtime.sendMessage(
+    let sendIssue = chrome.runtime.sendMessage(
         {
             title: title,
             description : description
+        }, 
+        
+        function(response) {
+            console.log("recieved response.");
+            handleResponse(response);
         }
     )
 
-    sendIssue;
+    console.log("sendMessage()");
+    await sendIssue();
+
 }
 
 function handleResponse(message) {
